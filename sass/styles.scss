@@ -293,7 +293,27 @@ figcaption {
   text-align: center;
 }
 
-@media print, screen and (max-width: 740px) {
+@media screen and (max-width: 740px) {
+  html {
+    background: #434B55;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .wrapper {
+    @include border-top-radius(0);
+    @include box-shadow(none);
+    width:100%;
+  }
+
+  footer {
+    @include border-bottom-radius(0);
+  }
+}
+
+@media print{
   body {
     padding:0;
   }
