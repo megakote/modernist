@@ -16,6 +16,16 @@ body {
   font-weight:300;
 }
 
+.clearfix:after {
+  visibility:hidden;
+  display:block;
+  font-size:0;
+  content:" ";
+  clear:both;
+  height:0;
+  line-height:0;
+}
+
 .wrapper {
   width:740px;
   padding:$padding;
@@ -269,6 +279,18 @@ footer {
     font-weight:bold;
     text-decoration:underline;
   }
+}
+
+figure {
+  width: 100%;
+  padding: 0;
+  margin: -.7em 0 1.4em;
+}
+
+figcaption {
+  line-height: 1em;
+  font-size: .85em;
+  text-align: center;
 }
 
 @media print, screen and (max-width: 740px) {
