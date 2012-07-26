@@ -353,6 +353,7 @@ figcaption {
     -moz-box-shadow: none;
     box-shadow: none;
     width: 100%;
+    box-sizing: border-box;
   }
 
   footer {

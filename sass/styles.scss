@@ -306,6 +306,7 @@ figcaption {
     @include border-top-radius(0);
     @include box-shadow(none);
     width:100%;
+    box-sizing:border-box;
   }
 
   footer {
