@@ -27,7 +27,9 @@ body {
 }
 
 .wrapper {
-  width:740px;
+  @include box-sizing(border-box);
+  width:780px;
+  overflow:hidden;
   padding:$padding;
   margin:0 auto;
   background:#DEDEDE;
@@ -70,6 +72,7 @@ header {
   border-bottom:1px solid #B2D2E1;
   @include box-shadow(#fff 0 1px 0);
   min-height:image-height("twitter.png");
+  width:100%;
 }
 
 .header_link {
@@ -80,6 +83,7 @@ header {
   margin-right:100px;
   position:relative;
   display:block;
+  min-height:image-height("cat.png") + 4;
 
   &:hover {
     text-decoration:none;
@@ -108,10 +112,12 @@ header {
 .header_link_info {
   font-style:italic;
   color:#222;
+  display:block;
+  line-height:1em;
 }
 
 .header_feedback {
-  display:inline-block;
+  display:block;
   position:absolute;
   right:$padding;
   top:$padding;
@@ -140,7 +146,7 @@ header {
 article, section {
   padding:15px 0;
   padding-bottom:40px;
-  font-size:15px;
+  font-size:1.1em;
   position:relative;
 }
 
@@ -153,7 +159,9 @@ article, section {
 .post_stamp {
   font-size:.8em;
   font-family:Monaco, "Courier New", monospace;
-  color:#BBB;
+  color:#888;
+  position: relative;
+  top: -1px;
 
   &:after {
     content:'»';
@@ -172,8 +180,13 @@ h1, h2, h3, h4, h5, h6 {
   @include text-shadow(rgba(black, .1) 0 -1px 1px);
 }
 
-p, ul, ol, table, pre, dl {
+p, table, pre, dl {
   margin:0 0 20px;
+}
+
+ul, ol {
+  margin: 0 0 1em;
+  padding: 0 0 0 1.3em;
 }
 
 h1, h2, h3 {
@@ -302,15 +315,30 @@ figcaption {
     padding: 0;
   }
 
+  header {
+    padding: 20px 20px 10px;
+    margin: -25px -20px;
+    margin-bottom: 0;
+  }
+
   .wrapper {
-    @include border-top-radius(0);
+    @include border-radius(0);
     @include box-shadow(none);
     width:100%;
-    box-sizing:border-box;
+    padding: 20px 25px;
+    font-size:1.1em;
   }
 
   footer {
-    @include border-bottom-radius(0);
+    @include border-radius(0);
+    margin-bottom:-20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    font-size:1em;
+    padding: 15px 10px;
   }
 }
 
